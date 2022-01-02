@@ -52,7 +52,7 @@ module.exports = {
         publicPath: '/build',
         watch:true
     },
-
+    historyApiFallback: true,
     // Proxy says taht any request made to '/api' will be routed to our server on localhost:3000
     // proxy should match whatever is going to match your fetch request on your frontend.
     proxy: {
@@ -60,7 +60,10 @@ module.exports = {
         target: 'http://localhost:3000/',
         secure: false,
       },
-
+      '/login': {
+        target: 'http://localhost:3000/login',
+        secure: false,
+      },
     },
   },
 };

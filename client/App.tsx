@@ -1,10 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Splash from './components/Splash';
+import Login from './components/Login';
 
 const App = () =>{
     return(
-        <div>
-            <h1> Hello </h1>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Splash />} />
+                <Route path='/login' element={<Login />}/>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
