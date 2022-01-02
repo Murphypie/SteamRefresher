@@ -1,9 +1,9 @@
 import { Router, Request, Response } from 'express';
 let router:Router = Router();
 
-import userController from "../controllers/userController";
+import {userController} from "../controllers/userController";
 
-router.post('/register', userController.register, (req, res)=>{
+router.post('/register',(req, res, next) => {userController.register}, (req, res)=>{
     res.send('Registered!')
 })
 
